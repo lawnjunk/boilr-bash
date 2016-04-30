@@ -35,5 +35,5 @@ run:
 	./$(program_name)
 
 watch:
-	find . -name "*.sh" | entr -c make
+	while sleep 1;do find . -name '*.sh' | grep -v $(program_name)| entr -d -c make;done
 
